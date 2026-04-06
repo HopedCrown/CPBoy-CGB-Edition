@@ -1,4 +1,6 @@
 /*
+ * CPBoy-CGB Edition Additions to Walnut_cgb: simply made it use the version of Walnut_cgb that I downloaded .
+
  * Walnut-CGB additions
  * Copyright (c) 2025 Mr. Paul (https://github.com/Mr-PauI)
  *
@@ -39,14 +41,8 @@
 
 #ifndef WALNUT_GB_H
 #define WALNUT_GB_H
-#if defined(__has_include)
-# if __has_include("version.all")
-#  include "version.all"	/* Version information */
-# endif
-#else
-/* Stub __has_include for later. */
-# define __has_include(x) 0
-#endif
+
+
 
 #include <stdlib.h>	/* Required for abort */
 #include <stdbool.h>	/* Required for bool types */

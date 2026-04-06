@@ -48,6 +48,10 @@ all: $(APP_ELF) $(APP_HH3) Makefile
 clean:
 	rm -rf $(BUILDDIR) $(OUTDIR)
 
+compile_commands.json:
+	make clean 
+	bear -- make -j all
+
 %.hh3: %.elf
 	$(STRIP) -o $@ $^
 
@@ -78,4 +82,4 @@ $(BUILDDIR)/%.o: %.cpp
 	mkdir -p $(dir $@)
 	$(CXX) -c $< -o $@ $(CXX_FLAGS)
 
-.PHONY: elf hh3 all clean
+.PHONY: elf hh3 all clean compile_commands.json
